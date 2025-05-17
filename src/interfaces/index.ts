@@ -4,3 +4,4 @@ export * from './error';
 export * from './user';
 export * from './ErrorResponse';
 export * from './MessageResponse';
+export * from './movie';

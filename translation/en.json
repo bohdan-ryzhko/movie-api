@@ -19,5 +19,15 @@
     "emailIsRequired": "Email is required",
     "pwdIsRequired": "Password is a required field",
     "refreshTokenIsRequired": "Refresh token is a required field"
+  },
+  "movies": {
+    "movieIdIsRequired": "Movie ID is a required parameter.",
+    "nameIsReq": "The 'Name' field is required.",
+    "descIsReq": "The 'Description' field is required.",
+    "releaseDateIsInvalid": "Release date must be a valid date (yyyy-mm-dd).",
+    "releaseDateIsReq": "Release date is a required field.",
+    "ratingMustBeANumber": "Rating must be a number.",
+    "ratingMax": "Rating cannot be higher than 5.",
+    "ratingIsReq": "Rating is required."
   }
 }

@@ -6,7 +6,7 @@ import cors from 'cors';
 import { i18n } from '@/i18n';
 
 import { notFound, errorHandler, setDefaultLanguage } from '@/middlewares';
-import { authRouter, userRouter } from '@/routes';
+import { authRouter, moviesRouter, userRouter } from '@/routes';
 
 require('dotenv').config();
 
@@ -22,6 +22,7 @@ app.use(express.json());
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/me', userRouter);
+app.use('/api/v1/movies', moviesRouter);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -136,7 +136,9 @@ export const deleteUser = ctrlWrapper(async (req: UserRequest, res) => {
 
   const userDto = UserDto(user);
 
-  await deleteUserById(userDto.id);
+  const deletedUser = await deleteUserById(userDto.id);
+
+  if (!deletedUser) throw HttpError({ status: 500, translation });
 
   res.status(204).json({});
 });

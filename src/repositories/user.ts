@@ -1,8 +1,6 @@
 import { IUser } from '@/interfaces';
 import { User } from '@/models';
 
-export const findUsers = () => User.find();
-
 export const createUser = (newUser: IUser) => User.create(newUser);
 
 export const findUserByEmail = (email: string) => User.findOne({ email });
