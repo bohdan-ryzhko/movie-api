@@ -1,6 +1,6 @@
 {
   "entryFile": "src/app.ts",
-  "controllerPathGlobs": ["src/swgger-controllers/**/*.ts"],
+  "controllerPathGlobs": ["src/swagger-controllers/**/*.ts"],
   "noImplicitAdditionalProperties": "silently-remove-extras",
   "spec": {
     "info": {
@@ -22,6 +22,6 @@
     ]
   },
   "routes": {
-    "routesDir": "swagger"
+    "routesDir": "src/swagger"
   }
 }

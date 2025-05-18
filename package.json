@@ -6,8 +6,8 @@
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register api/index.ts",
     "dev": "nodemon --exec \"ts-node -r tsconfig-paths/register\" api/index.ts",
-    "build": "tsc",
-    "start:dist": "node -r tsconfig-paths/register dist/api/index.js",
+    "build": "tsc && tsc-alias",
+    "start:dist": "node dist/api/index.js",
     "lint": "eslint --fix src test",
     "lint:fix": "prettier --write src && eslint --fix src",
     "test": "jest",

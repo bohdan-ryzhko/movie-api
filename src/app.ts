@@ -8,7 +8,7 @@ import { i18n } from '@/i18n';
 
 import { notFound, errorHandler, setDefaultLanguage } from '@/middlewares';
 import { authRouter, moviesRouter, userRouter } from '@/routes';
-// @ts-ignore
+
 import swaggerDocs from '../swagger/swagger.json';
 
 require('dotenv').config();
