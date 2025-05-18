@@ -19,6 +19,9 @@ require('dotenv').config();
 
 const { PORT = 3000, DB_URL } = process.env;
 
+const CSS_URL =
+  'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
+
 export const app = express();
 
 app.use(setDefaultLanguage);
@@ -40,9 +43,7 @@ app.use(
   '/api-docs',
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocs, {
-    customCssUrl: '/api-docs/swagger-ui.css',
-    customJs: '/api-docs/swagger-ui-bundle.js',
-    customfavIcon: '/api-docs/favicon-32x32.png'
+    customCssUrl: CSS_URL
   })
 );
 
