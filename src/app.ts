@@ -4,10 +4,10 @@ import helmet from 'helmet';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 
-import { i18n } from '@/i18n';
+import { i18n } from './i18n';
 
-import { notFound, errorHandler, setDefaultLanguage } from '@/middlewares';
-import { authRouter, moviesRouter, userRouter } from '@/routes';
+import { notFound, errorHandler, setDefaultLanguage } from './middlewares';
+import { authRouter, moviesRouter, userRouter } from './routes';
 
 import swaggerDocs from '../swagger/swagger.json';
 
