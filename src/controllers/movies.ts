@@ -4,6 +4,7 @@ import { headers, Languages } from '../constants';
 import { MovieDto, UserDto } from '../dtos';
 import { MovieRequest, UserRequest } from '../interfaces';
 import {
+  deleteManyMoviesByUserId,
   deleteMovieById,
   findMovies,
   makeMovie,
@@ -95,17 +96,9 @@ export const deleteMoviesByUserId = ctrlWrapper(
 
     if (!user) throw HttpError({ status: 401, translation });
 
-    const foundMovies = await findMovies(user._id);
+    const deletedMovies = await deleteManyMoviesByUserId(user._id);
 
-    if (!foundMovies) throw HttpError({ status: 404, translation });
-
-    for (let i = 0; i < foundMovies.length; i += 1) {
-      const movie = foundMovies[i];
-
-      const deletedMovie = await deleteMovieById(movie._id);
-
-      if (!deletedMovie) throw HttpError({ status: 500, translation });
-    }
+    if (!deletedMovies) throw HttpError({ status: 500, translation });
 
     next();
   }

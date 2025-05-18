@@ -11,3 +11,6 @@ export const updateMovieById = (id: string, movie: IMovie) =>
   Movie.findByIdAndUpdate(id, { $set: movie }, { new: true });
 
 export const deleteMovieById = (id: string) => Movie.findByIdAndDelete(id);
+
+export const deleteManyMoviesByUserId = (userId: string) =>
+  Movie.deleteMany({ userId });
