@@ -1,4 +1,4 @@
-import app from '../src/app';
+import { app } from '../src/app';
 import mongoose from 'mongoose';
 
 const { PORT = 3000, DB_URL } = process.env;
@@ -16,3 +16,5 @@ mongoose
     console.log(error);
     process.exit(1);
   });
+
+export default app;

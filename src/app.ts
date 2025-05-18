@@ -13,7 +13,7 @@ import swaggerDocs from '../swagger/swagger.json';
 
 require('dotenv').config();
 
-const app = express();
+export const app = express();
 
 app.use(setDefaultLanguage);
 
@@ -35,5 +35,3 @@ app.use('/api/v1/movies', moviesRouter);
 
 app.use(notFound);
 app.use(errorHandler);
-
-export default app;
