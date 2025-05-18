@@ -20,7 +20,7 @@ require('dotenv').config();
 const { PORT = 3000, DB_URL } = process.env;
 
 const CSS_URL =
-  'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
+  'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.21.0/swagger-ui.min.css';
 
 export const app = express();
 
