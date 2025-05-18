@@ -1,0 +1,820 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"Pick_IUser.Exclude_keyofIUser._id-or-password__": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"refreshToken": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email"
+				],
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"IUserDto": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"refreshToken": {
+						"type": "string"
+					},
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserInfo": {
+				"properties": {
+					"data": {
+						"properties": {
+							"user": {
+								"$ref": "#/components/schemas/IUserDto"
+							}
+						},
+						"required": [
+							"user"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"data"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Pick_IMovie.Exclude_keyofIMovie._id-or-description-or-name-or-release_date-or-userId__": {
+				"properties": {
+					"rating": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"rating"
+				],
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"IMovieDto": {
+				"properties": {
+					"rating": {
+						"type": "number",
+						"format": "double"
+					},
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"release_date": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"rating",
+					"id",
+					"name",
+					"description",
+					"release_date",
+					"userId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Translate": {
+				"properties": {
+					"translate": {
+						"properties": {
+							"en": {
+								"type": "string"
+							},
+							"uk": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"en",
+							"uk"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"translate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateMovieDto": {
+				"properties": {
+					"description": {
+						"$ref": "#/components/schemas/Translate"
+					},
+					"release_date": {
+						"type": "string"
+					},
+					"name": {
+						"$ref": "#/components/schemas/Translate"
+					},
+					"rating": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"description",
+					"release_date",
+					"name",
+					"rating"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateMovieDto": {
+				"properties": {
+					"description": {
+						"$ref": "#/components/schemas/Translate"
+					},
+					"release_date": {
+						"type": "string"
+					},
+					"name": {
+						"$ref": "#/components/schemas/Translate"
+					},
+					"rating": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Pick_IUserDto.Exclude_keyofIUserDto.refreshToken__": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"id"
+				],
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"Omit_IUserDto.refreshToken_": {
+				"$ref": "#/components/schemas/Pick_IUserDto.Exclude_keyofIUserDto.refreshToken__",
+				"description": "Construct a type with the properties of T except for those in type K."
+			},
+			"AuthResponse": {
+				"properties": {
+					"user": {
+						"$ref": "#/components/schemas/Omit_IUserDto.refreshToken_"
+					},
+					"accessToken": {
+						"type": "string"
+					},
+					"refreshToken": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"user",
+					"accessToken",
+					"refreshToken"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Pick_IUser.email-or-password_": {
+				"properties": {
+					"password": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"password",
+					"email"
+				],
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"UserPayload": {
+				"$ref": "#/components/schemas/Pick_IUser.email-or-password_"
+			},
+			"RefreshBody": {
+				"properties": {
+					"refreshToken": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"refreshToken"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"bearer": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"info": {
+		"title": "express-api-starter-ts",
+		"version": "1.2.0",
+		"description": " A basic starter for an express.js API with Typescript",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {
+			"name": "CJ R. ",
+			"email": "cj@null.computer",
+			"url": "https://w3cj.now.sh"
+		}
+	},
+	"paths": {
+		"/api/v1/me": {
+			"get": {
+				"operationId": "GetUserInfo",
+				"responses": {
+					"200": {
+						"description": "User information successfully retrieved",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserInfo"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"data": {
+												"user": {
+													"id": "123",
+													"email": "test@example.com"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "User not found"
+					}
+				},
+				"description": "Get information about the current authenticated user",
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": []
+			},
+			"delete": {
+				"operationId": "DeleteUser",
+				"responses": {
+					"204": {
+						"description": "User account has been successfully deleted"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "User not found"
+					}
+				},
+				"description": "Delete the current authenticated user account",
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/api/v1/movies": {
+			"get": {
+				"operationId": "GetMovies",
+				"responses": {
+					"200": {
+						"description": "Movies information successfully retrieved",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"data": {
+											"properties": {
+												"movies": {
+													"items": {
+														"$ref": "#/components/schemas/IMovieDto"
+													},
+													"type": "array"
+												}
+											},
+											"required": [
+												"movies"
+											],
+											"type": "object"
+										}
+									},
+									"required": [
+										"data"
+									],
+									"type": "object"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"data": {
+												"movies": [
+													{
+														"id": "123",
+														"name": "Inception",
+														"description": "Mind-bending thriller",
+														"release_date": "2010-07-16",
+														"userId": "sss-ddd",
+														"rating": 3.9
+													}
+												]
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "Not found"
+					}
+				},
+				"description": "Get all movies for the authenticated user",
+				"tags": [
+					"Movies"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateMovie",
+				"responses": {
+					"201": {
+						"description": "Movie successfully created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"data": {
+											"properties": {
+												"movie": {
+													"$ref": "#/components/schemas/IMovieDto"
+												}
+											},
+											"required": [
+												"movie"
+											],
+											"type": "object"
+										}
+									},
+									"required": [
+										"data"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				},
+				"description": "Create a new movie",
+				"tags": [
+					"Movies"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"description": "Movie data to create",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateMovieDto",
+								"description": "Movie data to create"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/movies/{id}": {
+			"get": {
+				"operationId": "GetMovie",
+				"responses": {
+					"200": {
+						"description": "Movie information successfully retrieved",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"data": {
+											"properties": {
+												"movie": {
+													"$ref": "#/components/schemas/IMovieDto"
+												}
+											},
+											"required": [
+												"movie"
+											],
+											"type": "object"
+										}
+									},
+									"required": [
+										"data"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "Not found"
+					}
+				},
+				"description": "Get single movie by id",
+				"tags": [
+					"Movies"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "Movie id",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateMovie",
+				"responses": {
+					"201": {
+						"description": "Movie successfully updated",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"data": {
+											"properties": {
+												"movie": {
+													"$ref": "#/components/schemas/IMovieDto"
+												}
+											},
+											"required": [
+												"movie"
+											],
+											"type": "object"
+										}
+									},
+									"required": [
+										"data"
+									],
+									"type": "object"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "Not found"
+					}
+				},
+				"description": "Update an existing movie",
+				"tags": [
+					"Movies"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "Movie id to update",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "Partial movie data to update",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateMovieDto",
+								"description": "Partial movie data to update"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteMovie",
+				"responses": {
+					"204": {
+						"description": "Movie successfully deleted"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "Not found"
+					}
+				},
+				"description": "Delete a movie by id",
+				"tags": [
+					"Movies"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": [
+					{
+						"description": "Movie id to delete",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/v1/auth/registration": {
+			"post": {
+				"operationId": "Registration",
+				"responses": {
+					"201": {
+						"description": "User successfully registered",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AuthResponse"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"user": {
+												"id": "123",
+												"email": "test@example.com"
+											},
+											"accessToken": "some-access-token",
+											"refreshToken": "some-refresh-token"
+										}
+									}
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "Email already in use"
+					}
+				},
+				"description": "User Registration",
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"description": "User registration data",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserPayload",
+								"description": "User registration data"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/auth/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"201": {
+						"description": "User successfully logged in",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AuthResponse"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"user": {
+												"id": "123",
+												"email": "test@example.com"
+											},
+											"accessToken": "some-access-token",
+											"refreshToken": "some-refresh-token"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid email or password"
+					}
+				},
+				"description": "User Login",
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"description": "User login data",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserPayload",
+								"description": "User login data"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/auth/refresh": {
+			"post": {
+				"operationId": "Refresh",
+				"responses": {
+					"201": {
+						"description": "Token successfully refreshed",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AuthResponse"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"user": {
+												"id": "123",
+												"email": "test@example.com"
+											},
+											"accessToken": "new-access-token",
+											"refreshToken": "new-refresh-token"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "User not found"
+					},
+					"409": {
+						"description": "Invalid refresh token"
+					}
+				},
+				"description": "Refresh Token",
+				"tags": [
+					"Auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"description": "Refresh token data",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/RefreshBody",
+								"description": "Refresh token data"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v1/auth/logout": {
+			"put": {
+				"operationId": "Logout",
+				"responses": {
+					"200": {
+						"description": "User successfully logged out"
+					},
+					"204": {
+						"description": "No content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				},
+				"description": "User Logout",
+				"tags": [
+					"Auth"
+				],
+				"security": [
+					{
+						"bearer": []
+					}
+				],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

@@ -8,8 +8,8 @@ export const MovieDto = (
 ): IMovieDto => ({
   id: movie._id,
   description: translate(movie.description, language),
-  release_date: movie.release_date,
+  release_date: String(movie.release_date),
   name: translate(movie.name, language),
   rating: movie.rating,
-  userId: movie.userId
+  userId: String(movie.userId)
 });

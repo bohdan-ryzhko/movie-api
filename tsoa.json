@@ -1,0 +1,27 @@
+{
+  "entryFile": "src/app.ts",
+  "controllerPathGlobs": ["src/swgger-controllers/**/*.ts"],
+  "noImplicitAdditionalProperties": "silently-remove-extras",
+  "spec": {
+    "info": {
+      "title": "Movies API"
+    },
+    "outputDirectory": "swagger",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "security": [
+      {
+        "bearer": []
+      }
+    ]
+  },
+  "routes": {
+    "routesDir": "swagger"
+  }
+}

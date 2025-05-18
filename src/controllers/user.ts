@@ -58,7 +58,7 @@ export const userLogin = ctrlWrapper(async (req, res) => {
 
   if (!(foundUser && isPasswordValid))
     throw HttpError({
-      status: 401,
+      status: 400,
       message: translation('auth.emailOrPwdInvalid')
     });
 

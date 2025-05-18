@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "experimentalDecorators": true,
     "sourceMap": true,
     "target": "esnext",
     "module": "commonjs",

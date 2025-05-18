@@ -13,10 +13,15 @@ export interface IMovie {
 }
 
 export interface IMovieDto
-  extends Omit<IMovie, '_id' | 'description' | 'name'> {
+  extends Omit<
+  IMovie,
+  '_id' | 'description' | 'name' | 'release_date' | 'userId'
+  > {
   id: string;
   name: string;
   description: string;
+  release_date: string;
+  userId: string;
 }
 
 export interface IMovieDocument extends IMovie, Document {}
