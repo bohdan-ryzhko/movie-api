@@ -1,21 +1,25 @@
 import request from 'supertest';
 
-import app from '../src/app';
+import app from '../api';
 
 describe('GET /api/v1', () => {
-  it('responds with a json message', (done) => {
+  it('responds with a json message', done => {
     request(app)
       .get('/api/v1')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200, {
-        message: 'API - 👋🌎🌍🌏',
-      }, done);
+      .expect(
+        200,
+        {
+          message: 'API - 👋🌎🌍🌏'
+        },
+        done
+      );
   });
 });
 
 describe('GET /api/v1/emojis', () => {
-  it('responds with a json message', (done) => {
+  it('responds with a json message', done => {
     request(app)
       .get('/api/v1/emojis')
       .set('Accept', 'application/json')
