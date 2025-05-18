@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
+import swaggerUiDist from 'swagger-ui-dist';
 
 import { i18n } from '../src/i18n';
 
@@ -15,6 +16,8 @@ import swaggerDocs from '../swagger/swagger.json';
 import '../src/scheduler';
 
 require('dotenv').config();
+
+const { PORT = 3000, DB_URL } = process.env;
 
 export const app = express();
 
@@ -30,6 +33,9 @@ app.use(
 );
 app.use(express.json());
 
+if (process.env.NODE_ENV === 'production') {
+  app.use('/api-docs', express.static(swaggerUiDist.getAbsoluteFSPath()));
+}
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use('/api/v1/auth', authRouter);
@@ -38,8 +44,6 @@ app.use('/api/v1/movies', moviesRouter);
 
 app.use(notFound);
 app.use(errorHandler);
-
-const { PORT = 3000, DB_URL } = process.env;
 
 mongoose
   .connect(`${DB_URL}`)
