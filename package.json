@@ -2,7 +2,7 @@
   "name": "express-api-starter-ts",
   "version": "1.2.0",
   "description": " A basic starter for an express.js API with Typescript",
-  "main": "src/index.ts",
+  "main": "api/index.js",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register api/index.ts",
     "dev": "nodemon api/index.ts",
