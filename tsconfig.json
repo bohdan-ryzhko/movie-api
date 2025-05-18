@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "moduleResolution": "node",
     "experimentalDecorators": true,
     "sourceMap": true,
     "target": "esnext",
@@ -15,5 +16,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["./*.js", "src/**/*.ts", "test/**/*.ts"]
+  "include": ["./*.js", "src/**/*.ts", "test/**/*.ts", "api/**/*.ts"]
 }

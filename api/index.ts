@@ -1,4 +1,4 @@
-import app from '@/app';
+import app from '../src/app';
 import mongoose from 'mongoose';
 
 const { PORT = 3000, DB_URL } = process.env;
