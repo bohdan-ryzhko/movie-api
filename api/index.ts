@@ -43,6 +43,7 @@ mongoose
   .connect(`${DB_URL}`)
   .then(() => {
     app.listen(PORT, () => {
+      console.log('DB_URL:', DB_URL);
       console.log(
         `Database connection successful, listening: http://localhost:${PORT}`
       );
