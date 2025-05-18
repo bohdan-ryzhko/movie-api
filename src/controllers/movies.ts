@@ -87,3 +87,26 @@ export const deleteMovie = ctrlWrapper(async (req: MovieRequest, res) => {
 
   res.status(204).json({});
 });
+
+export const deleteMoviesByUserId = ctrlWrapper(
+  async (req: UserRequest, res, next) => {
+    const user = req.user;
+    const translation = res.__;
+
+    if (!user) throw HttpError({ status: 401, translation });
+
+    const foundMovies = await findMovies(user._id);
+
+    if (!foundMovies) throw HttpError({ status: 404, translation });
+
+    for (let i = 0; i < foundMovies.length; i += 1) {
+      const movie = foundMovies[i];
+
+      const deletedMovie = await deleteMovieById(movie._id);
+
+      if (!deletedMovie) throw HttpError({ status: 500, translation });
+    }
+
+    next();
+  }
+);
