@@ -36,7 +36,15 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   app.use('/api-docs', express.static(swaggerUiDist.getAbsoluteFSPath()));
 }
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use(
+  '/api-docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocs, {
+    customCssUrl: '/api-docs/swagger-ui.css',
+    customJs: '/api-docs/swagger-ui-bundle.js',
+    customfavIcon: '/api-docs/favicon-32x32.png'
+  })
+);
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/me', userRouter);
