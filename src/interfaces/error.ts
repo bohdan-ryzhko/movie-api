@@ -1,4 +1,4 @@
-import { errorMessages } from '@/constants';
+import { errorMessages } from '../constants';
 
 export type HttpStatus = keyof typeof errorMessages;
 

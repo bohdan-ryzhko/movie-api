@@ -1,14 +1,14 @@
 import express from 'express';
-import { routes } from '@/constants';
-import { validateBody, authenticate } from '@/middlewares';
-import { validateRefreshData, validateUserData } from '@/schemas';
+import { routes } from '../constants';
+import { validateBody, authenticate } from '../middlewares';
+import { validateRefreshData, validateUserData } from '../schemas';
 import {
   checkUserEmailInUse,
   userLogin,
   userLogout,
   userRefresh,
   userRegistration
-} from '@/controllers';
+} from '../controllers';
 
 export const authRouter = express.Router();
 

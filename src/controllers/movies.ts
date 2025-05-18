@@ -1,15 +1,15 @@
 import merge from 'lodash.merge';
 
-import { headers, Languages } from '@/constants';
-import { MovieDto, UserDto } from '@/dtos';
-import { MovieRequest, UserRequest } from '@/interfaces';
+import { headers, Languages } from '../constants';
+import { MovieDto, UserDto } from '../dtos';
+import { MovieRequest, UserRequest } from '../interfaces';
 import {
   deleteMovieById,
   findMovies,
   makeMovie,
   updateMovieById
-} from '@/repositories';
-import { ctrlWrapper, HttpError } from '@/utils';
+} from '../repositories';
+import { ctrlWrapper, HttpError } from '../utils';
 
 export const createMovie = ctrlWrapper(async (req: UserRequest, res) => {
   const user = req.user;

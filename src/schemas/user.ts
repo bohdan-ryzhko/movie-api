@@ -1,6 +1,6 @@
 import Joi from 'joi';
-import { emailRegex } from '@/constants';
-import { I18Fn, IUser } from '@/interfaces';
+import { emailRegex } from '../constants';
+import { I18Fn, IUser } from '../interfaces';
 
 export const validateUserData = (translation: I18Fn) =>
   Joi.object<IUser>({

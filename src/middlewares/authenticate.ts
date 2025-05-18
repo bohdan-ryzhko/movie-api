@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { NextFunction, Response } from 'express';
-import { HttpError } from '@/utils';
-import { TokenPayload, UserRequest } from '@/interfaces';
-import { findUserById } from '@/repositories';
+import { HttpError } from '../utils';
+import { TokenPayload, UserRequest } from '../interfaces';
+import { findUserById } from '../repositories';
 
 require('dotenv').config();
 

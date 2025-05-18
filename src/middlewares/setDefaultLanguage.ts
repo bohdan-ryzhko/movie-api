@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 
-import { headers, languages } from '@/constants';
+import { headers, languages } from '../constants';
 
 export const setDefaultLanguage = (
   req: Request,

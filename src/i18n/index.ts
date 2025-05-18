@@ -1,6 +1,6 @@
 import path from 'path';
 import { I18n } from 'i18n';
-import { languages } from '@/constants';
+import { languages } from '../constants';
 
 const locales = Object.values(languages);
 

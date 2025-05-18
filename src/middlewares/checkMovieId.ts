@@ -1,6 +1,6 @@
-import { MovieRequest } from '@/interfaces';
-import { findMovieById } from '@/repositories';
-import { HttpError } from '@/utils';
+import { MovieRequest } from '../interfaces';
+import { findMovieById } from '../repositories';
+import { HttpError } from '../utils';
 import { NextFunction, Response } from 'express';
 
 export const checkMovieId = async (

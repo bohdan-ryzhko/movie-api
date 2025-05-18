@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { I18Fn, IMovie } from '@/interfaces';
+import { I18Fn, IMovie } from '../interfaces';
 import { getTranslateValidation } from './base';
 
 export const validateCreateMovie = (translation: I18Fn) =>

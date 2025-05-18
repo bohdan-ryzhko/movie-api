@@ -2,7 +2,7 @@ import { CallbackWithoutResultAndOptionalError } from 'mongoose';
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-import { AuthHelperDocument } from '@/interfaces';
+import { AuthHelperDocument } from '../interfaces';
 
 export async function hashPassword<T extends AuthHelperDocument>(
   this: T,

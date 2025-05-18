@@ -1,5 +1,5 @@
-import { errorMessages } from '@/constants';
-import { CustomError, HttpStatus, I18Fn } from '@/interfaces';
+import { errorMessages } from '../constants';
+import { CustomError, HttpStatus, I18Fn } from '../interfaces';
 
 type HttpErrorParams = {
   status: HttpStatus;

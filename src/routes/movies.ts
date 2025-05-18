@@ -1,14 +1,14 @@
 import express from 'express';
-import { routes } from '@/constants';
-import { authenticate, checkMovieId, validateBody } from '@/middlewares';
+import { routes } from '../constants';
+import { authenticate, checkMovieId, validateBody } from '../middlewares';
 import {
   createMovie,
   deleteMovie,
   getMovie,
   getMovies,
   updateMovie
-} from '@/controllers';
-import { validateCreateMovie, validateUpdateMovie } from '@/schemas';
+} from '../controllers';
+import { validateCreateMovie, validateUpdateMovie } from '../schemas';
 
 export const moviesRouter = express.Router();
 

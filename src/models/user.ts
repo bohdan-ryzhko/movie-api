@@ -1,13 +1,13 @@
 import { model, Schema } from 'mongoose';
-import { AuthHelperDocument, IUserDocument } from '@/interfaces';
-import { emailRegex } from '@/constants';
+import { AuthHelperDocument, IUserDocument } from '../interfaces';
+import { emailRegex } from '../constants';
 import {
   comparePasswords,
   generateAccessToken,
   generateRefreshToken,
   hashPassword,
   verifyRefreshToken
-} from '@/middlewares';
+} from '../middlewares';
 
 require('dotenv').config();
 

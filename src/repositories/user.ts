@@ -1,5 +1,5 @@
-import { IUser } from '@/interfaces';
-import { User } from '@/models';
+import { IUser } from '../interfaces';
+import { User } from '../models';
 
 export const createUser = (newUser: IUser) => User.create(newUser);
 

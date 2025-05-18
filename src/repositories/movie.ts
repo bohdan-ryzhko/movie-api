@@ -1,5 +1,5 @@
-import { IMovie } from '@/interfaces';
-import { Movie } from '@/models';
+import { IMovie } from '../interfaces';
+import { Movie } from '../models';
 
 export const findMovies = (userId: string) => Movie.find({ userId });
 

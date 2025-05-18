@@ -1,6 +1,6 @@
 import { Types } from 'mongoose';
 
-import { Translate } from '@/interfaces';
+import { Translate } from '../interfaces';
 import { Request } from 'express';
 
 export interface IMovie {
@@ -14,8 +14,8 @@ export interface IMovie {
 
 export interface IMovieDto
   extends Omit<
-  IMovie,
-  '_id' | 'description' | 'name' | 'release_date' | 'userId'
+    IMovie,
+    '_id' | 'description' | 'name' | 'release_date' | 'userId'
   > {
   id: string;
   name: string;

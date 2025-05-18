@@ -1,6 +1,6 @@
-import { I18Fn } from '@/interfaces';
-import { findUserById } from '@/repositories';
-import { HttpError } from '@/utils';
+import { I18Fn } from '../interfaces';
+import { findUserById } from '../repositories';
+import { HttpError } from '../utils';
 
 export const generateAccessAndRefreshTokensUser = async (
   userId: string,

@@ -1,6 +1,6 @@
-import { IMovieDocument, IMovieDto } from '@/interfaces';
-import { translate } from '@/dtos';
-import { Languages } from '@/constants';
+import { IMovieDocument, IMovieDto } from '../interfaces';
+import { translate } from '../dtos';
+import { Languages } from '../constants';
 
 export const MovieDto = (
   movie: IMovieDocument,

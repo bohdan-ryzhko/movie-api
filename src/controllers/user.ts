@@ -1,17 +1,17 @@
-import { UserDto } from '@/dtos';
-import { IUser, RefreshBody, UserRequest } from '@/interfaces';
+import { UserDto } from '../dtos';
+import { IUser, RefreshBody, UserRequest } from '../interfaces';
 import {
   createUser,
   deleteUserById,
   findUserByEmail,
   findUserByToken,
   updateUserById
-} from '@/repositories';
+} from '../repositories';
 import {
   ctrlWrapper,
   generateAccessAndRefreshTokensUser,
   HttpError
-} from '@/utils';
+} from '../utils';
 
 export const checkUserEmailInUse = ctrlWrapper(async (req, res, next) => {
   const { email }: IUser = req.body;

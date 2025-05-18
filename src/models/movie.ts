@@ -1,4 +1,4 @@
-import { IMovieDocument } from '@/interfaces';
+import { IMovieDocument } from '../interfaces';
 import { model, Schema } from 'mongoose';
 
 const movieSchema = new Schema<IMovieDocument>({
