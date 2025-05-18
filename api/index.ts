@@ -12,6 +12,8 @@ import { authRouter, moviesRouter, userRouter } from '../src/routes';
 
 import swaggerDocs from '../swagger/swagger.json';
 
+import '../src/scheduler';
+
 require('dotenv').config();
 
 export const app = express();
@@ -49,7 +51,7 @@ mongoose
     });
   })
   .catch(error => {
-    console.log(error);
+    console.log('error', error);
     process.exit(1);
   });
 
