@@ -4,10 +4,10 @@
   "description": " A basic starter for an express.js API with Typescript",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register src/index.ts",
-    "dev": "nodemon src/index.ts",
+    "start": "ts-node -r tsconfig-paths/register api/index.ts",
+    "dev": "nodemon api/index.ts",
     "build": "tsc && tsc-alias -p tsconfig.json",
-    "start:dist": "node dist/src/index.js",
+    "start:dist": "node dist/api/index.js",
     "lint": "eslint --fix src test",
     "lint:fix": "prettier --write src && eslint --fix src",
     "test": "jest",
