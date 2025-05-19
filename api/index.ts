@@ -24,16 +24,16 @@ const CSS_URL =
 
 export const app = express();
 
-app.use(setDefaultLanguage);
-
-app.use(i18n.init);
-app.use(morgan('dev'));
-app.use(helmet());
 app.use(
   cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE']
   })
 );
+
+app.use(setDefaultLanguage);
+app.use(i18n.init);
+app.use(morgan('dev'));
+app.use(helmet());
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
